@@ -4,11 +4,23 @@
 % Erode Operation
 % Erode operation is a process of shrinking the boundary to the interior,
 % and it can be used to eliminate some small and meaningless objects.
-
+A1 = [0 1 1 1 1 0;0 1 1 1 1 0; 0 1 1 1 1 0 ; 0 1 1 1 1 0];
+B = [0 1 0; 1 1 1 ; 0 1 0];
+A1_erode = imerode(A1,B)
 % Dilate Operation
 % Dilate operation is a process of merging all the background points
 % touching the objects into the objects to extend boundary to the outside,
 % and it can be used to fill holes in objects
+A2 = [0 0 0 0 ; 0 1 1 0; 0 1 1 0 ; 0 0 0 0];
+A2_dilate = imdilate(A2,B)
+
+%
+A = [0 0 0 0 0 0;0 1 1 1 1 0; 0 1 1 1 1 0 ; 0 1 1 1 1 0; 0 1 1 1 1 0; 0 0 0 0 0 0];
+B1 = [0 0 0; 0 1 0 ; 0 1 0];
+B2 = [0 1 0; 0 0 0 ; 0 0 0 ];
+Ac= ~A
+C1 = imerode(A,B1)
+C2 = imerode(A,B2)
 
 % Opening Operation
 % The process is first to calculate the corrosion, and then expansion.
