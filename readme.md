@@ -1,5 +1,5 @@
-Digital image process
-This is a repo about how to solve problems by using digital image process
+# Digital image process
+**How to make digital image process with matlab**
 
 Function of image process:
    * Make picture clear
